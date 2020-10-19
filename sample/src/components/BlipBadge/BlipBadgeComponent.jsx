@@ -1,17 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export const BlipBadgeComponent = ({
-  value,
-  color='warning',
-  textColor='whisper',
-  ...otherProps
+const BlipBadgeComponent = ({
+    value,
+    color = 'warning',
+    text_color = 'whisper',
+    ...otherProps
 }) => {
-  return <span {...otherProps} className={`badge bp-fs-7 ph1 br-100 bp-c-${textColor} bp-bg-${color}`}>{value}</span>
-}
+    return (
+        <span
+            {...otherProps}
+            className={`badge bp-fs-7 ph1 br-100 bp-c-${text_color} bp-bg-${color}`}
+        >
+            {value}
+        </span>
+    );
+};
 
 BlipBadgeComponent.propTypes = {
-  value: PropTypes.any.isRequired,
-  color: PropTypes.string,
-  textColor: PropTypes.string,
-}
+    value: PropTypes.any.isRequired,
+    color: PropTypes.string,
+    text_color: PropTypes.string
+};
+
+export { BlipBadgeComponent };

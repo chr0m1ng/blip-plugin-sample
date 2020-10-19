@@ -1,50 +1,52 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import { BlipDropdownButtonComponent } from './BlipDropdownButtonComponent'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { BlipDropdownButtonComponent } from './BlipDropdownButtonComponent';
 
 const BlipDropdownButtonContainer = ({
-  buttonClass,
-  dropdownClass,
-  label,
-  children,
-  onOpenDropdown,
-  onCloseDropdown,
-  arrowSide = 'left',
-  footer = [],
+    button_class,
+    dropdown_class,
+    label,
+    children,
+    onOpenDropdown,
+    onCloseDropdown,
+    arrow_side = 'left',
+    footer = []
 }) => {
-  const [showDropdown, setShowDropdown] = useState(false)
+    const [show_dropdown, setShowDropdown] = useState(false);
 
-  const toggleDropdown = () => {
-    if (showDropdown) {
-      onCloseDropdown !== undefined && onCloseDropdown()
-    } else {
-      onOpenDropdown !== undefined && onOpenDropdown()
-    }
-    setShowDropdown(!showDropdown)
-  }
+    const toggleDropdown = () => {
+        if (show_dropdown) {
+            onCloseDropdown !== undefined && onCloseDropdown();
+        } else {
+            onOpenDropdown !== undefined && onOpenDropdown();
+        }
+        setShowDropdown(!show_dropdown);
+    };
 
-  return <BlipDropdownButtonComponent
-    buttonClass={buttonClass}
-    dropdownClass={dropdownClass}
-    label={label}
-    arrowSide={arrowSide}
-    showDropdown={showDropdown}
-    toggleDropdown={toggleDropdown}
-    footer={footer}
-  >
-    {children}
-  </BlipDropdownButtonComponent>
-}
+    return (
+        <BlipDropdownButtonComponent
+            button_class={button_class}
+            dropdown_class={dropdown_class}
+            label={label}
+            arrow_side={arrow_side}
+            show_dropdown={show_dropdown}
+            toggleDropdown={toggleDropdown}
+            footer={footer}
+        >
+            {children}
+        </BlipDropdownButtonComponent>
+    );
+};
 
 BlipDropdownButtonContainer.propTypes = {
-  buttonClass: PropTypes.string,
-  dropdownClass: PropTypes.string,
-  label: PropTypes.any.isRequired,
-  children: PropTypes.any.isRequired,
-  onOpenDropdown: PropTypes.func,
-  onCloseDropdown: PropTypes.func,
-  arrowSide: PropTypes.string,
-  footer: PropTypes.arrayOf(PropTypes.node),
-}
+    button_class: PropTypes.string,
+    dropdown_class: PropTypes.string,
+    label: PropTypes.any.isRequired,
+    children: PropTypes.any.isRequired,
+    onOpenDropdown: PropTypes.func,
+    onCloseDropdown: PropTypes.func,
+    arrow_side: PropTypes.string,
+    footer: PropTypes.arrayOf(PropTypes.node)
+};
 
-export { BlipDropdownButtonContainer }
+export { BlipDropdownButtonContainer };

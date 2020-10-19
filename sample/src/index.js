@@ -1,25 +1,27 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
-import { IframeMessageProxy } from 'iframe-message-proxy'
-import './index.scss'
-import * as serviceWorker from './serviceWorker'
-import { setHeight } from 'api/commomService'
-import { ResizeObserver } from 'resize-observer'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { IframeMessageProxy } from 'iframe-message-proxy';
+import './index.scss';
+import * as service_worker from './service-worker';
+import { setHeight } from 'api/commom-service';
+import { ResizeObserver } from 'resize-observer';
 
-IframeMessageProxy.listen()
+IframeMessageProxy.listen();
 
-const rootDiv = document.getElementById("root")
+const ROOT_ID = 'root';
 
-const documentObserver = new ResizeObserver(() => {
-    setHeight(rootDiv.scrollHeight)
-})
+const ROOT_DIV = document.getElementById(ROOT_ID);
 
-documentObserver.observe(rootDiv)
+const DOCUMENT_OBSERVER = new ResizeObserver(() => {
+    setHeight(ROOT_DIV.scrollHeight);
+});
 
-ReactDOM.render(<App />, document.getElementById('root'))
+DOCUMENT_OBSERVER.observe(ROOT_DIV);
+
+ReactDOM.render(<App />, document.getElementById(ROOT_ID));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister()
+service_worker.unregister();
