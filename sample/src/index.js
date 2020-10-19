@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { App } from './components/App';
 import { IframeMessageProxy } from 'iframe-message-proxy';
 import './index.scss';
 import * as service_worker from './service-worker';

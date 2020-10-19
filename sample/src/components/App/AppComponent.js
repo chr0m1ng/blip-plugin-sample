@@ -4,8 +4,8 @@ import {
     getApplication,
     getContacts,
     getThreads
-} from './api/application-service';
-import { showToast, withLoading } from './api/commom-service';
+} from '../../api/application-service';
+import { showToast, withLoading } from '../../api/commom-service';
 import { PageHeader } from 'components/PageHeader';
 import { BlipTable } from 'components/BlipTable';
 import { CommonProvider } from 'contexts/CommonContext';
@@ -25,7 +25,7 @@ const TABLE_THREADS_MODEL = [
     { label: 'Unread Messages', key: 'unreadMessages' }
 ];
 
-const App = () => {
+const AppComponent = () => {
     const [application, setApplication] = useState({});
     const [contacts, setContacts] = useState([]);
     const [threads, setThreads] = useState([]);
@@ -106,4 +106,4 @@ const App = () => {
     );
 };
 
-export default App;
+export { AppComponent };
