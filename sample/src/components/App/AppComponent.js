@@ -5,7 +5,7 @@ import {
     getContacts,
     getThreads
 } from '../../api/application-service';
-import { showToast, withLoading } from '../../api/commom-service';
+import { showToast, withLoading } from '../../api/common-service';
 import { PageHeader } from 'components/PageHeader';
 import { BlipTable } from 'components/BlipTable';
 import { CommonProvider } from 'contexts/CommonContext';
