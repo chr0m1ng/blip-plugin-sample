@@ -4,7 +4,7 @@ import { App } from './components/App';
 import { IframeMessageProxy } from 'iframe-message-proxy';
 import './index.scss';
 import * as service_worker from './service-worker';
-import { setHeight } from 'api/commom-service';
+import { setHeight } from 'api/common-service';
 import { ResizeObserver } from 'resize-observer';
 
 IframeMessageProxy.listen();
